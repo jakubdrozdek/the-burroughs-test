@@ -1,6 +1,18 @@
+# The Burroughs Test
 
+A sample, future-proof repository setup with automation and maintainability in mind.
 
-# TheBurroughsTest
+## Task description
+
+Create a small SPA to help a small ﬁctional company calculate the dates on which they should pay their sales staff. Company payroll is handled like so:
+
+• Sales staff are paid a regular ﬁxed base salary each month, plus a regular monthly bonus.
+• Base salaries are paid on the last day of each month, unless that day is a Saturday or Sunday (a weekend), in which case they are paid on the Friday before the weekend
+• On the 15th of each month, bonuses are paid for the previous month, unless that day is a weekend, in which case they are paid on the ﬁrst Wednesday after the 15th.
+
+Your SPA should accept a date as input, then display in the tabular form the payment dates for the following 12 months, including the supplied date. In addition there should be an option to export tabular data in the CSV format.
+
+# Application
 
 This project was generated using [Nx](https://nx.dev).
 
@@ -78,8 +90,6 @@ Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
 
 ## ☁ Nx Cloud
 
