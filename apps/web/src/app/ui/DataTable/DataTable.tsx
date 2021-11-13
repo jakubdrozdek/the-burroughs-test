@@ -33,7 +33,7 @@ export function DataTable<TData extends Record<string, any>>({
         {data.map((item) => (
           <TableRow key={item[rowKey]}>
             {columns.map((column) => (
-              <TableCell>{column.cellContent(item)}</TableCell>
+              <TableCell key={column.id}>{column.cellContent(item)}</TableCell>
             ))}
           </TableRow>
         ))}
