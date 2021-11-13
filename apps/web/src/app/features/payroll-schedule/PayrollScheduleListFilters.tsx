@@ -18,6 +18,10 @@ export function PayrollScheduleListFilters({
         size="small"
         onChange={(event) => onDateChange(event.target.value)}
         defaultValue={defaultDate}
+        label="Select start date"
+        InputLabelProps={{
+          shrink: true,
+        }}
       />
     </ListFilters>
   );
