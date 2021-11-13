@@ -1,14 +1,18 @@
 import { ThemeProvider } from '@mui/material';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom';
+import { QueryClientProvider } from 'react-query';
 
 import App from './app/app';
+import { queryClient } from './app/lib/react-query';
 import { theme } from './app/lib/mui';
 
 ReactDOM.render(
   <StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
     </ThemeProvider>
   </StrictMode>,
   document.getElementById('root')
