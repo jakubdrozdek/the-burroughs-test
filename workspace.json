@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "api": "libs/api",
     "web": "apps/web",
     "web-e2e": "apps/web-e2e"
   }
