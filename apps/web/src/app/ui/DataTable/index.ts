@@ -1,2 +1,2 @@
 export { DataTable } from './DataTable';
-export { ColumnOptions } from './DataTable.model';
+export type { ColumnOptions } from './DataTable.model';
