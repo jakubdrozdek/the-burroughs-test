@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom';
 import { QueryClientProvider } from 'react-query';
@@ -13,7 +13,8 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-        <App />
+          <CssBaseline />
+          <App />
         </BrowserRouter>
       </QueryClientProvider>
     </ThemeProvider>
