@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@the-burroughs-test/api": ["libs/api/src/index.ts"]
+      "@api": ["libs/api/src/index.ts"],
+      "@web-app/*": ["apps/web/src/app/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
