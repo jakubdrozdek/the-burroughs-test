@@ -3,7 +3,7 @@ import { TextField } from '@mui/material';
 import { ListFilters } from '@web-app/ui/ListFilters';
 
 interface Props {
-  defaultDate: string;
+  defaultDate?: string;
   onDateChange: (newDate: string) => void;
 }
 

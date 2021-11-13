@@ -11,27 +11,33 @@ import {
 } from '@web-app/features/payroll-schedule';
 
 export function PayrollSchedule() {
-  const [startDate, setStartDate] = useState<dayjs.Dayjs>(() => dayjs());
-
-  const { data, status, error } = useQuery(
-    ['payroll-schedule', startDate.toISOString()],
-    () =>
-      Handlers.getPayrollSchedule({
-        startDate: startDate.toISOString(),
-        endDate: startDate.add(12, 'months').toISOString(),
-      })
+  const [startDate, setStartDate] = useState<string>(() =>
+    dayjs().toISOString()
   );
 
-  function handleDateChange(newDate: string) {
-    setStartDate(dayjs(newDate).startOf('month'));
+  const { data, status, error } = useQuery(
+    ['payroll-schedule', startDate],
+    () =>
+      Handlers.getPayrollSchedule({
+        startDate: startDate,
+        endDate: dayjs(startDate).add(12, 'months').toISOString(),
+      }),
+    {
+      enabled: !!startDate,
+    }
+  );
+
+  function handleDateChange(newDate: string | undefined) {
+    const parsedDate = dayjs(newDate);
+    if (parsedDate.isValid()) {
+      setStartDate(parsedDate.startOf('month').toISOString());
+    }
   }
 
   return (
     <Page title="Payroll Schedule">
-      <PayrollScheduleListFilters
-        defaultDate={startDate.toISOString()}
-        onDateChange={handleDateChange}
-      />
+      <PayrollScheduleListFilters onDateChange={handleDateChange} />
+
       {status === 'loading' ? (
         <div>Loading...</div>
       ) : status === 'error' || !data ? (
