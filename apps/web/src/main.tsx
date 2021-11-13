@@ -3,7 +3,7 @@ import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom';
 
 import App from './app/app';
-import { theme } from './app/ui/theme.config';
+import { theme } from './app/lib/mui';
 
 ReactDOM.render(
   <StrictMode>
