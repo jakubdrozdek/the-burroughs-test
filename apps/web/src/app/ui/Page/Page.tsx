@@ -1,8 +1,8 @@
 import { Container, Typography } from '@mui/material';
 
 interface Props {
-  title: string;
   children: React.ReactNode;
+  title: string;
 }
 
 export function Page({ children, title }: Props) {

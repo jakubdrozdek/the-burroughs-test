@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import {
   Table,
   TableHead,
@@ -7,11 +6,7 @@ import {
   TableBody,
 } from '@mui/material';
 
-export interface ColumnOptions<TData> {
-  id: string;
-  title: ReactNode;
-  cellContent: (item: TData) => ReactNode;
-}
+import { ColumnOptions } from './DataTable.model';
 
 interface Props<TData> {
   columns: ColumnOptions<TData>[];
