@@ -1,5 +1,7 @@
+import { Typography } from '@mui/material';
+
 export function App() {
-  return <h1>The Borroughs Test</h1>;
+  return <Typography variant="h1">The Borroughs Test</Typography>;
 }
 
 export default App;
